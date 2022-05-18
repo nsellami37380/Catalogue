@@ -101,8 +101,8 @@
     <Content Include="Global.asax" />
     <Content Include="Models\CatalogueModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CatalogueModel.Context.cs</LastGenOutput>
       <DependentUpon>CatalogueModel.edmx</DependentUpon>
+      <LastGenOutput>CatalogueModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\CatalogueModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -118,6 +118,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategorieController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProduitController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -143,6 +144,10 @@
     <Compile Include="Models\CAT_PRODUIT.cs">
       <DependentUpon>CatalogueModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\USER.cs">
+      <DependentUpon>CatalogueModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +165,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Categorie\AjoutCategorie.cshtml" />
     <Content Include="Views\Produit\AjoutProduit.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

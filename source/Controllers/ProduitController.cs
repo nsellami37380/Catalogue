@@ -9,7 +9,8 @@ using System.IO;
 
 namespace projetCatalogueProduit.Controllers
 {
-    public class ProduitController : Controller
+   [Authorize]
+   public class ProduitController : Controller
     {
         // GET: Produit
         public ActionResult Index()

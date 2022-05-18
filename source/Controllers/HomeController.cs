@@ -8,6 +8,7 @@ using projetCatalogueProduit.Models;
 
 namespace projetCatalogueProduit.Controllers
 {
+   [Authorize]
     public class HomeController : Controller
     {
       CATALOGUE_Entities db = new CATALOGUE_Entities();

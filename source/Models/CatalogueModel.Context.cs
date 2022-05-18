@@ -16,7 +16,7 @@ namespace projetCatalogueProduit.Models
     public partial class CATALOGUE_Entities : DbContext
     {
         public CATALOGUE_Entities()
-            : base("name=CATALOGUE_Entities")
+            : base("name=CATALOGUE_Entities1")
         {
         }
     
@@ -27,5 +27,6 @@ namespace projetCatalogueProduit.Models
     
         public virtual DbSet<CAT_CATEGORIE> CAT_CATEGORIE { get; set; }
         public virtual DbSet<CAT_PRODUIT> CAT_PRODUIT { get; set; }
+        public virtual DbSet<USER> USER { get; set; }
     }
 }

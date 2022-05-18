@@ -24,9 +24,19 @@
          <li class="nav-item active">
             <a class="nav-link" href="~/Produit/AjoutProduit">Ajouter Produit</a>
          </li>
-
       </ul>
+      <span class="navbar-text">
+         @if (User.Identity.IsAuthenticated)
+         {
+            @("Welcome: ")<b>@User.Identity.Name</b>
+            @Html.ActionLink("Logout", "LogOut", "Login");
+         }
+         else
+         {
+            @Html.ActionLink("Login", "Login", "Login");
 
+         }
+      </span>
    </nav>
 
 

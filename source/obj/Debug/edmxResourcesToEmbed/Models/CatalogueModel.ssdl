@@ -20,6 +20,15 @@
     <Property Name="URL_IMAGE_PRODUIT" Type="nvarchar(max)" />
     <Property Name="DATE_SAISIE" Type="datetime" />
   </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="role" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="FK_CAT_PRODUIT_CAT_PRODUIT">
     <End Role="CAT_CATEGORIE" Type="Self.CAT_CATEGORIE" Multiplicity="0..1" />
     <End Role="CAT_PRODUIT" Type="Self.CAT_PRODUIT" Multiplicity="*" />
@@ -35,6 +44,7 @@
   <EntityContainer Name="BD_CATALOGUE_PRODUITModelStoreContainer">
     <EntitySet Name="CAT_CATEGORIE" EntityType="Self.CAT_CATEGORIE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CAT_PRODUIT" EntityType="Self.CAT_PRODUIT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_CAT_PRODUIT_CAT_PRODUIT" Association="Self.FK_CAT_PRODUIT_CAT_PRODUIT">
       <End Role="CAT_CATEGORIE" EntitySet="CAT_CATEGORIE" />
       <End Role="CAT_PRODUIT" EntitySet="CAT_PRODUIT" />

@@ -22,6 +22,15 @@
     <Property Name="DATE_SAISIE" Type="DateTime" Precision="3" />
     <NavigationProperty Name="CAT_CATEGORIE" Relationship="Self.FK_CAT_PRODUIT_CAT_PRODUIT" FromRole="CAT_PRODUIT" ToRole="CAT_CATEGORIE" />
   </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="role" Type="Int32" Nullable="false" />
+  </EntityType>
   <Association Name="FK_CAT_PRODUIT_CAT_PRODUIT">
     <End Role="CAT_CATEGORIE" Type="Self.CAT_CATEGORIE" Multiplicity="0..1" />
     <End Role="CAT_PRODUIT" Type="Self.CAT_PRODUIT" Multiplicity="*" />
@@ -34,9 +43,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="CATALOGUE_Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="CATALOGUE_Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CAT_CATEGORIE" EntityType="Self.CAT_CATEGORIE" />
     <EntitySet Name="CAT_PRODUIT" EntityType="Self.CAT_PRODUIT" />
+    <EntitySet Name="USER" EntityType="Self.USER" />
     <AssociationSet Name="FK_CAT_PRODUIT_CAT_PRODUIT" Association="Self.FK_CAT_PRODUIT_CAT_PRODUIT">
       <End Role="CAT_CATEGORIE" EntitySet="CAT_CATEGORIE" />
       <End Role="CAT_PRODUIT" EntitySet="CAT_PRODUIT" />

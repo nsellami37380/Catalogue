@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BD_CATALOGUE_PRODUITModelStoreContainer" CdmEntityContainer="CATALOGUE_Entities">
+  <EntityContainerMapping StorageEntityContainer="BD_CATALOGUE_PRODUITModelStoreContainer" CdmEntityContainer="CATALOGUE_Entities1">
     <EntitySetMapping Name="CAT_CATEGORIE">
       <EntityTypeMapping TypeName="BD_CATALOGUE_PRODUITModel.CAT_CATEGORIE">
         <MappingFragment StoreEntitySet="CAT_CATEGORIE">
@@ -20,6 +20,16 @@
           <ScalarProperty Name="IMAGE_PRODUIT" ColumnName="IMAGE_PRODUIT" />
           <ScalarProperty Name="URL_IMAGE_PRODUIT" ColumnName="URL_IMAGE_PRODUIT" />
           <ScalarProperty Name="DATE_SAISIE" ColumnName="DATE_SAISIE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER">
+      <EntityTypeMapping TypeName="BD_CATALOGUE_PRODUITModel.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role" ColumnName="role" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

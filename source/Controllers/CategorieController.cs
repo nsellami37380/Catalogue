@@ -9,7 +9,8 @@ using System.Web.UI;
 
 namespace projetCatalogueProduit.Controllers
 {
-    public class CategorieController : Controller
+   [Authorize]
+   public class CategorieController : Controller
     {
 
       CATALOGUE_Entities db = new CATALOGUE_Entities();
